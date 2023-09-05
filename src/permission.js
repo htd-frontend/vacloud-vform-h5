@@ -1,3 +1,10 @@
+/*
+ * @Author       : jiangronghua 613870505@qq.com
+ * @Date         : 2023-09-04 08:28:12
+ * @LastEditTime : 2023-09-05 08:24:48
+ * @LastEditors  : jiangronghua
+ * @Description  :
+ */
 import router from './router'
 import store from './store'
 import { Message } from 'element-ui'
@@ -8,7 +15,7 @@ import getPageTitle from '@/utils/get-page-title'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
-const whiteList = ['/login'] // no redirect whitelist
+const whiteList = ['/login', '/template'] // no redirect whitelist
 
 router.beforeEach(async(to, from, next) => {
   // start progress bar
@@ -32,7 +39,7 @@ router.beforeEach(async(to, from, next) => {
       } else {
         try {
           // get user info
-          await store.dispatch('user/getInfo')
+          // await store.dispatch('user/getInfo')
 
           next()
         } catch (error) {
